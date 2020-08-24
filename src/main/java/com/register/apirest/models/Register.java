@@ -1,4 +1,4 @@
-package com.cadastro.apirest.models;
+package com.register.apirest.models;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -12,8 +12,8 @@ import javax.validation.constraints.NotNull;
 
 
 @Entity
-@Table(name="TB_CADASTRO")
-public class Cadastro implements Serializable{
+@Table(name="TB_REGISTER")
+public class Register implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -22,20 +22,28 @@ public class Cadastro implements Serializable{
 	private long id;
 	
 	@NotNull
-	private String Nome;
+	private String Name;
 	
 	@NotNull
 	private String CPF;
 	
 	@NotNull
-	private String endereco;
-	
+	private String adress;
+
 	public long getId() {
 		return id;
 	}
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
 	}
 
 	public String getCPF() {
@@ -46,21 +54,15 @@ public class Cadastro implements Serializable{
 		CPF = cPF;
 	}
 
-	public String getEndereco() {
-		return endereco;
+	public String getAdress() {
+		return adress;
 	}
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	public void setAdress(String adress) {
+		this.adress = adress;
 	}
+	
 
-	public String getNome() {
-		return Nome;
-	}
-
-	public void setNome(String nome) {
-		Nome = nome;
-	}
 
 	
 

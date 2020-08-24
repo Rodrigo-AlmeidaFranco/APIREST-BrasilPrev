@@ -1,4 +1,4 @@
-package com.cadastro.apirest;
+package com.register.apirest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

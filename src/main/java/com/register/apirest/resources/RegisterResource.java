@@ -1,4 +1,4 @@
-package com.cadastro.apirest.resources;
+package com.register.apirest.resources;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cadastro.apirest.models.Cadastro;
-import com.cadastro.apirest.repository.CadastroRepository;
+import com.register.apirest.models.Register;
+import com.register.apirest.repository.RegisterRepository;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,39 +24,39 @@ import io.swagger.annotations.ApiOperation;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value="/api")
-@Api(value="API REST Cadastro")
-public class CadastroResource {
+@Api(value="Register API REST")
+public class RegisterResource {
 	
 	@Autowired
-	CadastroRepository cadastroRepository;
+	RegisterRepository cadastroRepository;
 	
-	@ApiOperation(value="Retorna uma lista de Cadastros")
-	@GetMapping("/cadastros")
-	public List<Cadastro> listaCadastros(){
+	@ApiOperation(value="Return a list of registers")
+	@GetMapping("/register")
+	public List<Register> listaCadastros(){
 		return cadastroRepository.findAll();
 	}
 	
-	@ApiOperation(value="Retorna um cadastro unico")
-	@GetMapping("/cadastro/{id}")
-	public Cadastro listaCadastroUnico(@PathVariable(value="id") long id){
+	@ApiOperation(value="Return a unique register")
+	@GetMapping("/register/{id}")
+	public Register listaCadastroUnico(@PathVariable(value="id") long id){
 		return cadastroRepository.findById(id);
 	}
 	
-	@ApiOperation(value="Salva um cadastro")
-	@PostMapping("/cadastro")
-	public Cadastro salvaCadastro(@RequestBody @Valid Cadastro cadastro) {
+	@ApiOperation(value="Save a Register")
+	@PostMapping("/register")
+	public Register salvaCadastro(@RequestBody @Valid Register cadastro) {
 		return cadastroRepository.save(cadastro);
 	}
 	
-	@ApiOperation(value="Deleta um cadastro")
-	@DeleteMapping("/cadastro")
-	public void deletaCadastro(@RequestBody @Valid Cadastro cadastro) {
+	@ApiOperation(value="Delete a register")
+	@DeleteMapping("/register")
+	public void deletaCadastro(@RequestBody @Valid Register cadastro) {
 		cadastroRepository.delete(cadastro);
 	}
 	
-	@ApiOperation(value="Atualiza um cadastro")
-	@PutMapping("/cadastro")
-	public Cadastro atualizaCadastro(@RequestBody @Valid Cadastro cadastro) {
+	@ApiOperation(value="Update a register")
+	@PutMapping("/register")
+	public Register atualizaCadastro(@RequestBody @Valid Register cadastro) {
 		return cadastroRepository.save(cadastro);
 	}
 	 

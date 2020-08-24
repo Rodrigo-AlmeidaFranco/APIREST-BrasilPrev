@@ -1,4 +1,4 @@
-package com.cadastro.apirest.config;
+package com.register.apirest.config;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import org.springframework.context.annotation.Bean;
@@ -24,7 +24,7 @@ public class SwaggerConfig {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.cadastro.apirest"))
+                .apis(RequestHandlerSelectors.basePackage("com.register.apirest"))
                 .paths(regex("/api.*"))
                 .build()
                 .apiInfo(metaInfo());
@@ -33,7 +33,7 @@ public class SwaggerConfig {
     private ApiInfo metaInfo() {
 
         ApiInfo apiInfo = new ApiInfo(
-                "Cadastro API REST",
+                "Register API REST",
                 "API REST de cadastro de produtos.",
                 "1.0",
                 "Terms of Service",
